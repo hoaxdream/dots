@@ -1,0 +1,6 @@
+#!/bin/sh
+#date=$(date '+%a-%m/%d %I:%M:%S %p ')
+#icon='🕛' 
+#printf " %s %s \\n" "$icon" "$date"
+
+date '+%a-%m/%d %I:%M:%S %p ' | sed "s/^/🕑 /"

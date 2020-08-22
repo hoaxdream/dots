@@ -1,0 +1,77 @@
+"" File preview
+" Csv/excel
+filetype *.csv,*.xlsx libreoffice %c %i
+fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
+
+" HTMLs
+fileviewer *.html w3m -dump %c
+filextype *.html,*.htm $EDITOR %f 2>/dev/null &
+
+" PDFs
+filextype *.pdf zathura %c %i &
+fileviewer *.pdf
+        \ vifmimg pdf %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" ePUBs
+filextype *.epub zathura %c %i &
+fileviewer *.epub
+        \ vifmimg epub %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" Fonts
+fileviewer *.otf,*.ttf,*.woff
+        \ vifmimg font %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" Audios
+filetype <audio/*> mpv --no-audio-display %c
+fileviewer <audio/*>
+        \ file
+
+" Videos
+filetype <video/*> mpv %c %i </dev/null &>/dev/null &
+fileviewer <video/*>
+        \ vifmimg video %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" Images
+filextype <image/*> rotdir %f 2>/dev/null | sxiv -ia 2>/dev/null &
+fileviewer <image/*>
+        \ vifmimg draw %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
+
+" Gimp
+filextype *.svg inkscape %f 2>/dev/null &
+filextype *.xcf gimp %f 2>/dev/null &
+
+" Man-page
+fileviewer *.[1-8] man ./%c | col -b
+filetype *.[1-8] man ./%c
+
+" Archives
+fileview *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
+fileview *.tgz,*.tar.gz tar -tzf %c
+fileview *.tar.bz2,*.tbz2 tar -tjf %c
+fileview *.tar.txz,*.txz xz --list %c
+fileview *.tar tar -tf %c
+fileview *.rar unrar v %c
+fileview *.7z 7z l %c
+filetype *.zip,*.7z,*.rar,*.tar.gz,*.tar.xz ext %f
+
+" Text based files syntax highlighting
+" Set theme to clarity for nord theme
+fileview *.[ch],*.[ch]pp highlight -O xterm256 -s freya -S c %c
+fileview *.html,*.css,*.less highlight -O xterm256 -s freya %c --force
+fileview *.js,*.java,*.go,*.py highlight -O xterm256 -s freya %c --force
+fileview *.coffee,*.dart,*.lua highlight -O xterm256 -s freya %c --force
+fileview *.md,*.rb,*.ts,*.php highlight -O xterm256 -s freya %c --force
+fileview *.cs,*.vim,*.conf highlight -O xterm256 -s freya %c --force
+fileview *.swift,*.json,*.xml highlight -O xterm256 -s freya %c --force
+fileview Makefile,Makefile.* highlight -O xterm256 -s freya -S make %c
+fileview <text/*> highlight -O xterm256 -s freya -S sh %c

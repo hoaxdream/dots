@@ -1,0 +1,4 @@
+# required by x11-libs/libxkbcommon-0.10.0::gentoo[X]
+# required by x11-misc/xdotool-3.20160805.1::gentoo
+# required by xdotool (argument)
+>=x11-libs/libxcb-1.13.1 xkb

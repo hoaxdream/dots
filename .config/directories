@@ -1,0 +1,23 @@
+# You can add comments to these files with #
+cac ~/.cache
+c   ~/.config
+s   ~/.local/share
+dl  ~/.config/dl
+t   ~/.config/dl/torrent
+p   ~/.config/dl/pix
+dh  ~/.config/dl/docs
+w   ~/.config/work
+wd  ~/.config/work/diffs
+wr  ~/.config/work/repositories
+np  ~/.config/nvim/plug-config
+nc  ~/.config/nvim/colors
+mn  /mnt
+b   ~/.local/bin
+h   $HOME
+x   /media/core
+f   /media/data
+mg  /media/data/music
+pg  /media/data/pix/
+wg  /media/data/pix/walls/landscape
+dg  /media/data/docs
+vg  /media/data/vids

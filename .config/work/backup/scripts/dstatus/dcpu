@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#sensors | awk '/Core 0/ {print "🌡" $3}'
+
+CPU_TEMP=$(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)
+
+printf " %s \n" "🌡$CPU_TEMP"

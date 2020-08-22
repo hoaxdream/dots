@@ -1,0 +1,42 @@
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-python/PyQt5-5.14.1 opengl gui printsupport sql multimedia network widgets declarative webchannel
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-python/pyyaml-5.3 libyaml
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-qt/qtwebengine-5.14.1 widgets
+# required by dev-qt/qtwebengine-5.14.1::gentoo
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-qt/qtwebchannel-5.14.1 qml
+# required by dev-qt/qtwebengine-5.14.1::gentoo
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-libs/libxml2-2.9.9-r3 icu
+# required by dev-qt/qtwebengine-5.14.1::gentoo
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=media-libs/libvpx-1.7.0-r1 svc
+# required by dev-qt/qtwebengine-5.14.1::gentoo
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=sys-libs/zlib-1.2.11-r2 minizip
+# required by dev-qt/qtcore-5.14.1-r1::gentoo
+# required by dev-qt/qtxml-5.14.1::gentoo
+# required by dev-python/PyQt5-5.14.1::gentoo
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-libs/libpcre2-10.33-r1 pcre16
+# required by dev-python/PyQt5-5.14.1::gentoo[multimedia]
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by www-client/qutebrowser-9999::gentoo
+# required by qutebrowser (argument)
+>=dev-qt/qtmultimedia-5.14.1 widgets

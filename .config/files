@@ -1,0 +1,13 @@
+bf  $XDG_CONFIG_HOME/files
+bd  $XDG_CONFIG_HOME/directories
+cfa $XDG_CONFIG_HOME/aliasrc
+cfz $ZDOTDIR/.zshrc
+cfv $XDG_CONFIG_HOME/nvim/init.vim
+cfe $XDG_CONFIG_HOME/vifm/vifmrc
+cfx $XDG_CONFIG_HOME/xrdb/Xresources
+cff $XDG_CONFIG_HOME/fontconfig/fonts.conf
+cfu $XDG_CONFIG_HOME/newsboat/urls
+cfn $XDG_CONFIG_HOME/newsboat/config
+cfmb  $XDG_CONFIG_HOME/ncmpcpp/bindings
+cfmc  $XDG_CONFIG_HOME/ncmpcpp/config
+cfk $XDG_CONFIG_HOME/sxhkd/sxhkdrc

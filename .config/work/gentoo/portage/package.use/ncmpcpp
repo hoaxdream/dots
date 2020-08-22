@@ -1,0 +1,4 @@
+media-sound/ncmpcpp clock taglib visualizer outputs
+# required by media-sound/ncmpcpp-0.8.2-r1::gentoo
+# required by ncmpcpp (argument)
+>=dev-libs/boost-1.72.0-r1 icu

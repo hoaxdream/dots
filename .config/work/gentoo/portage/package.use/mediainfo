@@ -1,0 +1,4 @@
+media-video/mediainfo curl
+# required by media-video/mediainfo-19.09::gentoo
+# required by media-video/mediainfo (argument)
+>=media-libs/libmediainfo-19.09 curl

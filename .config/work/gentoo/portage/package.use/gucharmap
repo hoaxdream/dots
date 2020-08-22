@@ -1,0 +1,4 @@
+# required by dev-util/itstool-2.0.6-r1::gentoo[python_single_target_python3_6]
+# required by gnome-extra/gucharmap-12.0.1::gentoo
+# required by gnome-extra/gucharmap (argument)
+>=dev-libs/libxml2-2.9.9-r3 python
