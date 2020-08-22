@@ -1,0 +1,21 @@
+#!/bin/sh
+# Runs on login and sourced in.xinitrc
+
+# Fix Gnome Apps Slow  Start due to failing services
+# Add this when you include flatpak in your system
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
+# Start gnome-keyring to use with ssh-add
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+xset s off -dpms &
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/xrdb/Xresources &
+remaps &
+xsetroot -cursor_name left_ptr &
+dwmblocks &
+unclutter --timeout 3 -jitter 50 --ignore-scrolling &
+mpd-notify &
+picom -b &
+setbg &
+dunst &
