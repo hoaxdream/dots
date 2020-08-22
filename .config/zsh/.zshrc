@@ -1,9 +1,9 @@
 # Colors
-autoload -U colors && colors    # load colors
-setopt autocd                   # automatically cd into typed directory
-setopt SHARE_HISTORY            # shares all history
-setopt HIST_IGNORE_ALL_DUPS     # ignore all duplicates in history
-stty stop undef                 # disable ctrl-s to freeze terminal
+autoload -U colors && colors    # Load colors
+setopt autocd                   # Automatically cd into typed directory
+setopt share_history            # Shares all history
+setopt hist_ignore_all_dups     # Ignore all duplicates in history
+stty stop undef                 # Disable ctrl-s to freeze terminal
 
 # Git prompt with branch name
 function precmd {
@@ -46,10 +46,10 @@ setopt completealiases
 autoload -U compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list \
-    'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' # case-insensitive completion
+  'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' # Case-insensitive completion
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots) # include hidden files
+_comp_options+=(globdots) # Include hidden files
 REPORTTIME=1
 
 # Vi mode
@@ -63,7 +63,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# Change cursor shape for different vi modes.
+# Change cursor shape for different vi modes
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
@@ -75,16 +75,25 @@ function zle-keymap-select {
     echo -ne '\e[5 q'
   fi
 }
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # Initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt
 
 # Command not found
 command_not_found_handler() {
     printf "command not found \033[31m(╯°□°)╯︵ ┻━┻\033[0m\n"
 }
 
+bindkey -s '^a' 'bc -l\n'
+
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
 sysinfo
 
 # Load syntax highlighting; should be last
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
