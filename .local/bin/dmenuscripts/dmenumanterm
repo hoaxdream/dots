@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Search manpage in dmenu
+
+manpage=$(man -k . | dmenu -i -fn Monospace-10 -nb "#1d2021" -sb "#458588" -nf "#ebdbb2" -l 10 | awk '{ print $1}') && if [ -z "$manpage" ]; then exit; else $TERMINAL -e man "$manpage" & fi

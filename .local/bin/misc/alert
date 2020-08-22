@@ -1,0 +1,19 @@
+#!/bin/bash
+# audio alert for dunst, uncomment which for which audio you use
+
+# alsa
+#aplay ~/.local/share/audio/beep.wav
+
+# pulseaudio
+# Skip alert for mpdnotify
+if [[ "$1" == "mpd-notify" ]]
+then
+  exit 0
+fi
+
+if [[ "$1" == "voldunstlevel" ]]
+then
+  exit 0
+fi
+
+paplay ~/.local/share/audio/beep.wav

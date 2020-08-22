@@ -1,0 +1,11 @@
+#!/bin/sh
+
+clear
+for (( ; ; ))
+do
+    echo "Current Torrent Status"
+    transmission-remote -l
+    sleep .5
+    clear
+done
+

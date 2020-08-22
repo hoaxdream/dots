@@ -1,0 +1,4 @@
+#!/bin/sh
+# Search Movies and open in mpv
+file="$(find "/media/data/vids/movies/" -type f,l | fzf)"
+[ "$file" ] && setsid -f mpv "$file" -quiet >/dev/null 2>&1

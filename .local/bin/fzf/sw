@@ -1,0 +1,3 @@
+#!/bin/sh
+# Set wallpaper.
+find /media/data/pix/walls/landscape/ -type f,l | shuf | setsid -f sxiv - -tb >/dev/null 2>&1

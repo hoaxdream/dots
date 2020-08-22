@@ -1,0 +1,11 @@
+#!/bin/sh
+opt="dwm dunst dwmblocks picom"
+program="$(echo "$opt" | sed 's/ /\n/g' | dmenu -i -p "Restart")"
+case $program in
+  dwm) killall dwm;;
+  dunst) pkill dunst; dunst &;;
+  picom) pkill picom; picom -b;;
+  dwmblocks) killall -q dwmblocks; setsid dwmblocks &;;
+  *) exit
+esac
+notify-send "$program reloaded."

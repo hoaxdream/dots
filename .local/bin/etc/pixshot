@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Disables keyboard in screenshot
+maim -sk pic-selected-"$(date '+%y%m%d-%H%M-%S').png"
+

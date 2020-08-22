@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if pidof unclutter >/dev/null ;
+then
+  [ "$(printf "No\\nYes" | dmenu -i -fn Monospace-10 -nb "#1d2021" -sb "#458588" -nf "#ebdbb2" -p "Disable unclutter?")" = "Yes" ] && killall unclutter && notify-send "Unclutter disabled."
+else
+  ifinstalled unclutter || exit
+  [ "$(printf "No\\nYes" | dmenu -i -fn Monospace-10 -nb "#1d2021" -sb "#458588" -nf "#ebdbb2" -p "Enable unclutter?")" = "Yes" ] && unclutter --timeout 3 -jitter 50 --ignore-scrolling && notify-send "Unclutter enabled."
+fi

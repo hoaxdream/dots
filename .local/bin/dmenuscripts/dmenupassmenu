@@ -1,0 +1,3 @@
+#!/bin/bash
+
+passmenu -i -fn Monospace-10 -nb "#1d2021" -sb "#458588" -nf "#ebdbb2" -l 10

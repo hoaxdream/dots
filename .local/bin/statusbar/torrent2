@@ -1,0 +1,11 @@
+#!/bin/sh
+# Display the number of torrents that are currently downloading, paused, seeded and percentage done
+
+torrents=$(transmission-remote -l)
+downloading=$(echo "$torrents" | grep "Downloading\|Up & Down" | wc -l)
+paused=$(echo "$torrents" | grep "Stopped" | wc -l)
+seeding=$(echo "$torrents" | grep "Seeding" | wc -l)
+idle=$(echo "$torrents" | grep "Idle" | wc -l)
+percentage=$(echo "$torrents" | grep -E "%" | awk '{ printf $2 }')
+
+echo "🔽 $downloading 🛑 $paused 🌱 $seeding ⌛ $idle 🏁 $percentage"

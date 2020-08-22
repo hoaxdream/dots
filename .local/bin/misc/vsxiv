@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Script i use for opening images in nnn file manager
+sxiv -b * > /dev/null 2>&1 &

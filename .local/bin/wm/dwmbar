@@ -1,0 +1,84 @@
+#!/bin/sh
+
+SEP='|'
+interval=1
+rxs=0
+txs=0
+
+pulseaudio() {
+    VOL=$(pamixer --get-volume-human | tr -d '%')
+printf "%s" "$SEP1"
+    if [ "$VOL" = "muted" ] || [ "$VOL" -eq 0 ]; then
+        printf "🔇"
+    elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
+        printf "🔈 %s%%" "$VOL"
+    elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
+        printf "🔉 %s%%" "$VOL"
+    else
+        printf "🔊 %s%%" "$VOL"
+    fi
+}
+
+torrents() {
+    data=$(transmission-remote -l 2>/dev/null | grep -E "%|n/a")
+    [ "$data" ] || return
+    while read -r line; do
+        per="$(printf %s "$line" | awk '{ printf $2 }')"
+        printf %s "$line" | sed "
+            s/.*Stopped.*/ 🛑 /g;
+            s/.*Seeding.*/ 🌱 /g;
+            s/.*Idle.*/ ⌛ /g;
+            s/.*Uploading.*/ 🔼 /g;
+            s/.*Downloading.*/ 🔽 /g;
+            s/.*[A-Z][a-z].*/ ✅ / g;
+            "
+        printf %s "$per"
+    done <<EOF
+    $data
+EOF
+    transmission-remote -l | grep -qE "%|n/a" && printf " %s" "$SEP"
+}
+
+while true; do
+  # Network Interface Name
+  interface=$(ip route get 8.8.8.8 2>/dev/null| awk '{print $5}')
+
+  # Time
+  LOCALTIME=$(date +%a\-%d\-%b-%I:%M:%S-%p)
+
+  # CPU
+  CPU_TEMP=$(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)
+  CPU_F=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq)
+  CPU_FREQ=$(expr "$CPU_F" / 1000)
+
+  # GPU
+  GPU_TEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+
+  # Used and total memory
+  MEMUSED=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
+
+  # MPD
+  mpd() {
+      music="$(mpc current -f "%artist% - %title%")"
+      [ "$music" ] && printf " %s %s" "$music" "$SEP"
+}
+
+# Status
+xsetroot -name " $(mpd) $(pulseaudio) $(torrents) 🔻${rxs}kb|🔺${txs}kb 🧠${MEMUSED} 🔥${GPU_TEMP}°C 💻${CPU_FREQ}Mhz ${CPU_TEMP} 🕑$LOCALTIME "
+
+# internet
+
+  rx1=$(cat /sys/class/net/$interface/statistics/rx_bytes)
+  tx1=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+
+  sleep $interval
+
+  rx2=$(cat /sys/class/net/$interface/statistics/rx_bytes)
+  tx2=$(cat /sys/class/net/$interface/statistics/tx_bytes)
+  rxs=$(expr $rx2 - $rx1)
+  txs=$(expr $tx2 - $tx1)
+  rxs=$(expr $rxs / $interval)
+  txs=$(expr $txs / $interval)
+  rxs=$(expr $rxs / 1024)
+  txs=$(expr $txs / 1024)
+done &

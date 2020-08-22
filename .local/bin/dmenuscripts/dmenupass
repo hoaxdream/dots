@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Provides SUDO_ASKPASS variable, used as pass prompt if needed.
+
+dmenu -fn Monospace-10 -sb "#1d2021" -sf "#ebdbb2" -nf "#000000" -nb "#000000" -p "$1" <&- && echo

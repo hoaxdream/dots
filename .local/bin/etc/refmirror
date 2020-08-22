@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo -A reflector -c India -c HK -a 12 -p https -p http --sort rate --save /etc/pacman.d/mirrorlist

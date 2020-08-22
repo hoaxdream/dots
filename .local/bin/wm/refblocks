@@ -1,0 +1,4 @@
+#!/bin/sh
+# Reload dwmblocks and send notification.
+
+killall -q dwmblocks;setsid dwmblocks & notify-send "blocks reloaded"

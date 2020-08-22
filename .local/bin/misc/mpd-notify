@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while "true"; do
+notify-send -a mpd-notify -t 2000 "Now playing" "$(mpc current --wait)"
+done

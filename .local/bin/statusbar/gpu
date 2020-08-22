@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case $BUTTON in
+  2) setsid -f "$TERMINAL" -e nvtop ;;
+  3) notify-send "🔥 GPU module " "\- ShowsGPU temperature.
+- Middle click to open nvtop." ;;
+  6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+GPU_TEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+
+printf "🚀+${GPU_TEMP}°C"
