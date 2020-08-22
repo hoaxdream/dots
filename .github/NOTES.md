@@ -56,3 +56,6 @@
 #### Startpage:
   - **Set firefox homepage**
     - `/home/hoaxdream/.ansible/work/repositories/startpage/index.html`
+#### Checkra1n
+  - **Checkra1n**
+    - `sudo ./checkra1n -c`
