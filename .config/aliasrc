@@ -62,6 +62,7 @@ alias \
     dr="dot rebase -i HEAD~" \
     dp="dot push -u origin master" \
     ds="dot status" \
+    dif="dot diff" \
     dot="git --git-dir=$HOME/.config/dots --work-tree=$HOME" \
     cm="make clean && rm -f config.h && git reset --hard origin/master"
 
