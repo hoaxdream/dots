@@ -62,3 +62,13 @@
 #### SSH to iphone
   - send file
   - scp file.txt root@192.168.x.x:/var/mobile/Downloads`
+#### To install
+  - `New Term` repo `https://repo.chariz.com/`
+  - `OpenSSH` repo `https://apt.bingner.com`
+  - `iPadStatusBar` repo `https://repo.packix.com/`
+  - `Sonus12` repo `https://repo.packix.com/`
+  - `Filza file manager` repo `http://apt.thebigboss.org/repofiles/cydia/`
+  - `CrackTool4 (IOS12)` repo `https://julio.hackyouriphone.org/`
+  - `Cydown` repo `https://julio.hackyouriphone.org/`
+  - `Youtube tools` repo `https://jpet26.yourepo.com/`
+  - `PreferenceLoader` repo `http://apt.thebigboss.org/repofiles/cydia/`
