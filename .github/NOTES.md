@@ -59,6 +59,6 @@
 #### Checkra1n
   - **Checkra1n**
     - `sudo ./checkra1n -c`
-#### Ssh to iphone
+#### SSH to iphone
   - send file
   - scp file.txt root@192.168.x.x:/var/mobile/Downloads`
