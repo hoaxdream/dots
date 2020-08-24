@@ -65,8 +65,9 @@ _Use at your own risk or use [Arch Wiki](https://wiki.archlinux.org/index.php/in
   - `echo art > /etc/hostname`
   - add matching entries to host in _`/etc/hosts`_
 ```javascript
-127.0.0.1    localhost.localdomain localhost art
-::1          localhost.localdomain localhost art
+127.0.0.1    localhost
+::1          localhost
+127.0.1.1    art.localdomain art
 ```
 - **Install your preferred network management software** - this guide will use systemd
   - **Systemd-networkd**
@@ -117,12 +118,13 @@ include = /etc/pacman.d/mirrorlist
   - `login with created username and password`
   - `sudo pacman -Syu`
 ---
-#### Automatic installation of packages and dotfiles with stow
+#### Automatic installation of packages and dotfiles configuration
   - `sudo pacman -S git stow`
-  - `git clone https://github.com/hoaxdream/scripts-wip
-  - `cd scripts-wip`
+  - `git clone https://github.com/hoaxdream/bootstrap
+  - `cd bootstrap`
   - `./install`
-  - `./postinstall`
+  - `sudo ./postinstall`
+  - `reboot`
   - `./suckpatch`
 ---
 #### Manual installation of packages and dotfiles
@@ -157,8 +159,8 @@ include = /etc/pacman.d/mirrorlist
 ---
 ### Window manager
 - **Dwm**
-  - `mkdir -p ~/.ansible/repositories`
-  - `cd ~/.ansible/repositories`
+  - `mkdir -p ~/.config/work/repositories`
+  - `cd ~/.config/work/repositories`
   - `git clone https://git.suckless.org/dwm`
   - `git clone https://git.suckless.org/st`
   - `git clone https://git.suckless.org/dmenu`
