@@ -77,6 +77,8 @@ UUID=xxxx-xxxx /media/core/ ext4 rw,user,exec 0 0
     - `pass insert website_you_would_like_to_save_password`
 ---
 #### Firefox
+- **Fix screen tearing set to** `true`
+  - `layers.acceleration.force-enabled`
 - **Remove what's new: set to** `"false"`
   - `browser.messaging-system.whatsNewPanel.enabled`
 - **Fix mouse right click:  set to** `"true"`
