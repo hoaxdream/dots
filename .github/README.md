@@ -17,8 +17,8 @@
 ![Rice screen preview0003](https://i.imgur.com/caDawRq.png)
 
 ## Dotfiles installation
-- `git clone https://github.com/hoaxdream/scripts-wip`
-- `cd scripts-wip`
+- `git clone https://github.com/hoaxdream/bootstrap`
+- `cd bootstrap`
 - `./install`
 - `./postinstall`
 - `./suckpatch`
