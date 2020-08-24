@@ -21,7 +21,7 @@
 - `git clone https://github.com/hoaxdream/bootstrap`
 - `cd bootstrap`
 - `./install`
-- `./postinstall`
+- `sudo ./postinstall`
 - `./suckpatch`
  ---
 ## Dependencies
