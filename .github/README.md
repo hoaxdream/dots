@@ -15,6 +15,7 @@
 
 ## Dwm
 ![Rice screen preview0003](https://i.imgur.com/caDawRq.png)
+![Rice screen preview0004](https://i.imgur.com/5dFAWk4.png)
 
 ## Dotfiles installation
 - `git clone https://github.com/hoaxdream/bootstrap`
