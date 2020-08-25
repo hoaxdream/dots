@@ -64,6 +64,7 @@ alias \
     ds="dot status" \
     dif="dot diff" \
     dot="git --git-dir=$HOME/.config/dots --work-tree=$HOME" \
+    cb="make clean && rm -f blocks.h && git reset --hard origin/master" \
     cm="make clean && rm -f config.h && git reset --hard origin/master"
 
 # Miscellaneous
