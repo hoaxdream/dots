@@ -80,7 +80,7 @@ call plug#end()
 " Autocmd
 augroup BufferWrite
   au!
-  " Reload programs when configuration is updated
+" Reload programs when configuration is updated
   autocmd BufWritePost files,directories !shortcuts
   autocmd BufWritePost *Xresources !xrdb %
   autocmd BufWritePost dunstrc !pkill dunst; dunst &
@@ -90,9 +90,9 @@ augroup end
 
 augroup FileTypes
   au!
-  " Disables automatic commenting on newline:
+" Disables automatic commenting on newline:
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-   " Turn spellcheck on for markdown files
+" Turn spellcheck on for markdown files
   autocmd FileType markdown setlocal spell
   autocmd FileType markdown setlocal complete+=kspell
 augroup END
