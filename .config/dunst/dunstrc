@@ -191,8 +191,8 @@
   set_stack_tag = "voldunstlevel"
   timeout = 3
 
-[play_sound]
-  summary = "*"
-  script = "alert"
+#[play_sound]
+#  summary = "*"
+#  script = "alert"
 
 # vim: ft=cfg
