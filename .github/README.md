@@ -18,11 +18,12 @@
 ![Rice screen preview0004](https://i.imgur.com/5dFAWk4.png)
 
 ## Dotfiles installation
-- `git clone https://github.com/hoaxdream/bootstrap`
-- `cd bootstrap`
-- `./install`
-- `sudo ./postinstall`
-- `./suckpatch`
+- The default is dwm, just change xinitrc if you want to use bspwm or xmonad.
+  - `git clone https://github.com/hoaxdream/bootstrap`
+  - `cd bootstrap`
+  - `./install`
+  - `sudo ./postinstall`
+  - `./suckpatch`
  ---
 ## Dependencies
 Package name | Description
