@@ -26,7 +26,7 @@
 - `sudo ./postinstall`
 - `./suckpatch`
  ---
- < br/>
+< br/>
 ## Dependencies
 Package name | Description
 :--- | :---
