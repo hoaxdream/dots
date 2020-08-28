@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 72f14bb..3f7bd1c 100644
+index 72f14bb..e908ab0 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -1,50 +1,80 @@
@@ -196,7 +196,7 @@ index 72f14bb..3f7bd1c 100644
 +  { MODKEY,                       XK_Insert, spawn,          SHCMD("showclip") },
 +  { MODKEY,                       XK_grave,  spawn,          SHCMD("dmenuunicode") },
 +  { MODKEY,                       XK_b,      spawn,          SHCMD("$BROWSER") },
-+  { MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("st -e htop") },
++  { MODKEY,                       XK_g,      spawn,          SHCMD("st -e htop") },
 +  { MODKEY,                       XK_e,      spawn,          SHCMD("st -e vifmrun") },
 +  { MODKEY,                       XK_n,      spawn,          SHCMD("st -e newsboat; pkill -RTMIN+6 dwmblocks") },
 +  { MODKEY,                       XK_c,      spawn,          SHCMD("st -e calcurse") },
