@@ -109,6 +109,13 @@ UUID=xxxx-xxxx /media/core/ ext4 rw,user,exec 0 0
 - Unstow
   - `stow -Dt ~ *`
 ---
+#### Mounting USB
+- NTFS
+  - `fdisk /dev/sdx`
+  - `n, t, 7`
+  - `w`
+  - `mkfs.ntfs -f /dev/sdx`
+---
 #### Startpage:
   - **Set firefox homepage**
     - `/home/hoaxdream/.ansible/work/repositories/startpage/index.html`
