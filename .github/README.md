@@ -19,7 +19,7 @@
 
 ## Dotfiles installation
 *Dwm is the default wm, just change xinitrc if you want to use bspwm or xmonad.*
-*Bootstrap scripts are commented, use only what you need for your machine*
+*Read the commented lines in bootstrap scripts and change accordingly for your system*
 - `git clone https://github.com/hoaxdream/bootstrap`
 - `cd bootstrap`
 - `./install`
