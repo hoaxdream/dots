@@ -1,5 +1,5 @@
 diff --git a/blocks.def.h b/blocks.def.h
-index 738ca8b..38778fb 100644
+index 738ca8b..6017593 100644
 --- a/blocks.def.h
 +++ b/blocks.def.h
 @@ -1,11 +1,21 @@
@@ -10,10 +10,10 @@ index 738ca8b..38778fb 100644
 -
 -  {"", "date '+%b %d (%a) %I:%M%p'",          5,    0},
 +  /*Icon*/    /*Command*/     /*Update Interval*/ /*Update Signal*/
++  {"",  "cat /tmp/recordingicon 2>/dev/null",     0,     9},
 +  {"",  "nettraf",            1,                  16},
 +  {"",  "torrent",            20,                 7},
 +/*  {"",  "music",              0,                  11}, */
-+  {"",  "cat /tmp/recordingicon 2>/dev/null",  0,  9},
 +  {"",  "muttwiz",            180,                12},
 +  {"",  "pacpackages",        0,                  8},
 +  {"",  "news",               0,                  6},
@@ -21,7 +21,7 @@ index 738ca8b..38778fb 100644
 +  {"",  "cpu",                10,                 18},
 +  {"",  "gpu",                10,                 20},
 +  {"",  "weather",            18000,              5},
-+  {"",  "pulsevol",             0,                  10},
++  {"",  "pulsevol",           0,                  10},
 +  {"",  "clock",              1,                  1},
  };
  
