@@ -2,7 +2,7 @@
 
 # Open web page via dmenu and open on firefox
 
-TEXT="duckduckgo\ngithub\nludeon\nsuckless\n4anime\nwallhaven\nunixporn\nyoutube\ngmail"
+TEXT="duckduckgo\ngithub\nludeon\nsuckless\narch\n4anime\nwallhaven\nunixporn\nyoutube\ngmail"
 
 DMENU="$( echo -e $TEXT | dmenu -fn Monospace-10 -nb "#1d2021" -sb "#458588" -nf "#ebdbb2" -l 7 -p web )"
 
@@ -13,6 +13,7 @@ case "$DMENU" in
     github)       $BROWSER https://github.com                  ;;
     tagged)       $BROWSER https://ludeon.com/forums/index.php ;;
     suckless)     $BROWSER https://suckless.org                ;;
+    arch)         $BROWSER https://bbs.archlinux.org/index.php ;;
     4anime)       $BROWSER https://4anime.to                   ;;
     wallhaven)    $BROWSER https://wallhaven.cc                ;;
     unixporn)     $BROWSER https://www.reddit.com/r/unixporn   ;;
