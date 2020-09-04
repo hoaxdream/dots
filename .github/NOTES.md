@@ -117,6 +117,9 @@ UUID=xxxx-xxxx /media/core/ ext4 rw,user,exec 0 0
   - `mkfs.ntfs -f /dev/sdx`
 - Fix NTFS drive unmountable
   - `sudo ntfsfix /dev/sddX`
+- Mbr ext4
+  - `fdisk /dev/sdx`
+  - `mkfs.ext4 -F -O ^64bit -L 'core' '/dev/sdx'
 ---
 #### Startpage:
   - **Set firefox homepage**
