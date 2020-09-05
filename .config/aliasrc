@@ -69,7 +69,7 @@ alias \
 
 # Miscellaneous
 alias \
-    weather="curl wttr.in/San+Roque+San+Pedro+Laguna" \
+    wph="curl wttr.in/San+Roque+San+Pedro+Laguna" \
     weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
     fxp="chmod -R a=r,u+w,a+X" \
     df="df -h" \
