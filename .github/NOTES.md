@@ -124,3 +124,8 @@ UUID=xxxx-xxxx /media/core/ ext4 rw,user,exec 0 0
 #### Startpage:
   - **Set firefox homepage**
     - `/home/hoaxdream/.ansible/work/repositories/startpage/index.html`
+#### Steam games
+  - **Project zomboid
+    - set launch option to `-cachedir=~/.local/share/Zomboid`
+    - edit `/path/Steam/steamapps/common/ProjectZomboid/projectzomboid.sh`
+    - `GAMEDIR="${HOME}/.local/share/Zomboid"`
